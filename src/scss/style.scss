@@ -75,8 +75,7 @@ body {
 .games-card-header {
   font-size: 3rem;
   text-transform: uppercase;
-  margin: auto;
-
+  margin: 0;
   text-align: center;
 }
 .score-box,
@@ -100,10 +99,12 @@ body {
 }
 .price {
   font-size: 2rem;
+  margin: 1rem auto;
 }
 .criticsTitle,
 .savings {
   font-size: 2rem;
+  margin: 0;
 }
 
 .games-card:hover .games-card-front {

@@ -4,7 +4,7 @@ import { stores } from "./genre";
 const query = async function () {
   try {
     const response = await fetch(
-      "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Savings"
+      "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic"
     );
     const data = await response.json();
     data.forEach((games) => {
