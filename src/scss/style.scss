@@ -3,14 +3,19 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-size: 62.5%;
+  font-size: 92.5%;
   color: white;
-
+  height: 100vh;
   font-weight: 500;
 }
 body {
   background-color: #5b6467;
 background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+}
+
+section {
+  height: 100vh;
+ 
 }
 
 .header {
