@@ -18,7 +18,7 @@ const query = async function () {
         });
       };
       addStore();
-      console.log(storesArr);
+
       DOMSelectors.grid.insertAdjacentHTML(
         "beforeend",
         `<div class="games-card">
@@ -47,7 +47,10 @@ const query = async function () {
          
         </div>
 
-        
+        <div class="games-genres">
+            From ${storesArr}
+          </div>
+
       </div>
     </div> `
       );
