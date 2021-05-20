@@ -1,5 +1,5 @@
 import { DOMSelectors } from "./DOM";
-import { stores } from "./genre";
+import { stores } from "./stores";
 
 const query = async function () {
   try {
@@ -8,6 +8,14 @@ const query = async function () {
     );
     const data = await response.json();
     data.forEach((games) => {
+      let storesArr = [];
+      const addStore = function () {
+        stores.forEach((element) => {
+          if (games.storeID.includes(element.id)) {
+            storesArr.push(element.name);
+          }
+        });
+      };
       DOMSelectors.grid.insertAdjacentHTML(
         "beforeend",
         `<div class="games-card">
