@@ -13,9 +13,12 @@ const query = async function () {
         stores.forEach((element) => {
           if (games.storeID.includes(element.id)) {
             storesArr.push(element.name);
+            return storesArr;
           }
         });
       };
+      addStore();
+      console.log(storesArr);
       DOMSelectors.grid.insertAdjacentHTML(
         "beforeend",
         `<div class="games-card">
