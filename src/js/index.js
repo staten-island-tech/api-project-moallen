@@ -4,7 +4,7 @@ let pageNumber = 0;
 const query = async function () {
   try {
     const response = await fetch(
-      `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=${pageNumber++}`
+      `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=0`
     );
 
     const data = await response.json();
@@ -62,11 +62,14 @@ const query = async function () {
   }
 };
 query();
+
 function nextPrevious() {
-  if (pageNumber < 5) {
-    pageNumber++;
-  }
+  const nextPage = pageNumber + 1;
+  fetch(
+    `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=${nextPage}`
+  ).then((response) => response.json());
 }
-DOMSelectors.next.addEventListener("click", nextPrevious);
+
 console.log(pageNumber);
 console.log(nextPrevious);
+DOMSelectors.next.addEventListener("click", nextPrevious);
