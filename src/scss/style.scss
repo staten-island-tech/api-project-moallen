@@ -12,22 +12,90 @@ body {
 body {
   background-color: #5b6467;
   background-image: linear-gradient(270deg, #5b6467 10%, #017de9 75%);
+  animation: mist 1000ms ease-out;
 }
 
 section {
-  height: 100%;
+  height: 70%;
 }
 
 .header {
   font-size: 5.2rem;
-
+  animation: load 1000ms ease-out;
   margin: 3rem auto;
   text-align: center;
 }
+
+@keyframes load {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mist {
+  0% {
+    opacity: 90%;
+    
+  }
+
+  100% {
+    opacity: 0%;
+  }
+
+
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s ;
+}
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s;
+}
+@keyframes loader {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(180deg);}
+  50% { transform: rotate(180deg);}
+  75% { transform: rotate(360deg);}
+  100% { transform: rotate(360deg); opacity: 100%;}
+}
+@keyframes loader-inner {
+  0% { height: 0%;}
+  25% { height: 0%;}
+  50% { height: 100%;}
+  75% { height: 100%;}
+  100% { height: 0%; opacity: 100%;}
+}
+
+
 .subheader {
   margin: 1rem auto 2rem auto;
   text-align: center;
   font-size: 3.8rem;
+  animation: load 1000ms ease-out;
 }
 .games-grid {
   display: flex;
@@ -38,6 +106,7 @@ section {
   margin: 1rem auto;
   padding: 2rem auto;
   align-items: center;
+  
 }
 
 .games-card {
