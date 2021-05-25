@@ -1,10 +1,12 @@
 import { DOMSelectors } from "./DOM";
 import { stores } from "./stores";
 let pageNumber = 0;
-const query = async function () {
+const query = async function (pageNumber) {
+  const page = pageNumber;
+  DOMSelectors.grid.innerHTML = "";
   try {
     const response = await fetch(
-      `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=0`
+      `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=${page}`
     );
 
     const data = await response.json();
@@ -63,13 +65,17 @@ const query = async function () {
 };
 query();
 
-function nextPrevious() {
-  const nextPage = pageNumber + 1;
-  fetch(
-    `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=${nextPage}`
-  ).then((response) => response.json());
-}
-
-console.log(pageNumber);
-console.log(nextPrevious);
-DOMSelectors.next.addEventListener("click", nextPrevious);
+const nextPage = function () {
+  DOMSelectors.next.addEventListener("click", function next() {
+    pageNumber++;
+    query(pageNumber);
+  });
+};
+const previousPage = function () {
+  DOMSelectors.previous.addEventListener("click", function previousbtn() {
+    pageNumber--;
+    query(pageNumber);
+  });
+};
+nextPage();
+previousPage();
