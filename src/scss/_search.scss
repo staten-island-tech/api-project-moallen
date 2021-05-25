@@ -12,6 +12,7 @@ body {
   font-size: 4rem;
   margin: 2rem auto 3rem auto;
   text-align: center;
+  animation: load 1000ms ease-out;
 }
 .search-header-link,
 .search-header-link:visited,
