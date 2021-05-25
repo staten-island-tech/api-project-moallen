@@ -8,8 +8,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="scss/style.scss" />
+    <link rel="stylesheet" href="scss/loader1.scss">
   </head>
   <body>
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+
+   <div class="main">
+   
     <h1 class="header">The Broke Gamer's Favorite Website</h1>
     <h2 class="search-header">
       <a href="search.html" class="search-header-link">
@@ -50,8 +60,6 @@
       </div> 
     </section>
     
-    <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
   </div>
 
 
@@ -69,12 +77,8 @@ gsap.to(".games-grid", {
 
 
     <script src="js/index.js"></script>
+    <script src="js/anim.js"></script>
 
-    <script>
-      $(window).on("load",function(){
-        $(".loader-wrapper").fadeOut("slow");
-      });
-  </script>
 
   </body>
 </html>
