@@ -18,10 +18,10 @@ body {
 .search-header-link:visited,
 .search-header-link:link {
   text-decoration: underline;
-  color: red;
+  color: rgb(255, 255, 255);
 }
 .search-header-link:hover {
-  filter: hue-rotate(280deg);
+  color: black;
 }
 .search-form {
   display: flex;

@@ -1,7 +1,9 @@
 @use "_search.scss";
 @use "btn-navbar";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
 html,
 body {
+  font-family: "Source Sans Pro", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -12,7 +14,7 @@ body {
 }
 body {
   background-color: #5b6467;
-  background-image: linear-gradient(270deg, #5b6467 10%, #017de9 75%);
+  background-image: linear-gradient(270deg, #217027 10%, #319bb6 75%);
 }
 
 .main {
@@ -27,10 +29,12 @@ section {
 }
 
 .header {
-  font-size: 5.2rem;
-
-  margin-top: 5rem;
+  // font-family: ;
+  text-shadow: rgb(47, 45, 45) 8px 8px 3px;
+  font-size: 6rem;
+  margin-top: 3rem;
   text-align: center;
+  -webkit-text-stroke: 5px darkblue;
 }
 
 .subheader {
@@ -62,7 +66,7 @@ section {
 .games-card-front {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   top: 0;
   left: 0;
   background-position: center;
@@ -83,7 +87,7 @@ section {
   justify-content: space-around;
   align-items: center;
   color: white;
-  background-color: rgba(33, 33, 33, 0.911);
+  background-color: rgb(153, 0, 107);
   width: 100%;
   height: fit-content;
   transition: all 1s;
@@ -136,4 +140,23 @@ section {
 .test {
   color: black;
   font-size: 3rem;
+}
+@media screen and (max-width: 1440px) {
+  section {
+    height: 100%;
+  }
+  .header {
+    font-size: 4rem;
+    -webkit-text-stroke: 3px darkblue;
+  }
+}
+@media screen and (min-width: 760px) {
+  section {
+    height: 50%;
+  }
+}
+@media screen and (min-width: 1460px) {
+  .games-card-front {
+    height: 100%;
+  }
 }

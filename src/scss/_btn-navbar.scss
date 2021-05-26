@@ -7,8 +7,6 @@
   margin: 0;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.404);
-
-  z-index: 2;
 }
 .nav-links {
   height: 5rem;
@@ -24,4 +22,22 @@
 }
 .btn:hover {
   transform: scale(1.2);
+}
+@media screen and (max-width: 1400px) {
+  .navbar {
+    height: 6rem;
+    z-index: 2;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin: 0;
+  }
 }
