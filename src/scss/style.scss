@@ -1,5 +1,6 @@
 @use "_search.scss";
 @use "btn-navbar";
+@use "games-card";
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
 html,
 body {
@@ -31,8 +32,11 @@ section {
 .header {
   // font-family: ;
   text-shadow: rgb(47, 45, 45) 8px 8px 3px;
-  font-size: 6rem;
-  margin-top: 3rem;
+  font-size: 15rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding: 3rem;
+  padding-top: 0;
   text-align: center;
   -webkit-text-stroke: 5px darkblue;
 }
@@ -40,107 +44,12 @@ section {
 .subheader {
   margin: 1rem auto 2rem auto;
   text-align: center;
-  font-size: 3.8rem;
+  font-size: 8rem;
+  padding: 4rem;
+  //padding-top: 0;
+  -webkit-text-stroke: 5px rgb(228, 116, 52);
 }
 
-.games-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 90vw;
-  height: 100%;
-  margin: auto;
-  margin-bottom: 5rem;
-  padding: 2rem auto;
-  align-items: center;
-}
-
-.games-card {
-  height: 30vh;
-  width: 25vw;
-  position: relative;
-  margin: auto;
-  margin-bottom: 15rem;
-  transition: all 1s;
-}
-.games-card-front {
-  position: absolute;
-  width: 100%;
-  height: fit-content;
-  top: 0;
-  left: 0;
-  background-position: center;
-  z-index: 3;
-  transition: all 1s;
-}
-.poster {
-  width: 100%;
-  height: 50%;
-}
-.games-card-back {
-  position: absolute;
-  top: 10rem;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-color: rgb(153, 0, 107);
-  width: 100%;
-  height: fit-content;
-  transition: all 1s;
-  margin-bottom: 5rem;
-}
-.games-card-header {
-  font-size: 2rem;
-  text-transform: uppercase;
-  margin: 0;
-  text-align: center;
-}
-.score-box,
-.release-box,
-.price-box {
-  text-align: center;
-  margin: 0;
-}
-
-.games-genres {
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.games-genre {
-  list-style: none;
-}
-.price {
-  font-size: 1.5rem;
-  margin: 1rem auto;
-}
-.criticsTitle,
-.savings {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.games-card:hover .games-card-front {
-  z-index: 1;
-  transition: all 1s;
-}
-.games-card:hover .games-card-back {
-  z-index: 3;
-  display: flex;
-  transition: all 1s;
-}
-.test {
-  color: black;
-  font-size: 3rem;
-}
 @media screen and (max-width: 1440px) {
   section {
     height: 100%;
@@ -150,13 +59,66 @@ section {
     -webkit-text-stroke: 3px darkblue;
   }
 }
-@media screen and (min-width: 760px) {
+@media screen and (max-width: 1280px) {
+  section {
+    height: 25rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section {
+    height: 25rem;
+  }
+  .header {
+    font-size: 7rem;
+  }
+  .subheader {
+    font-size: 7rem;
+  }
+}
+@media screen and (max-width: 812px) {
+  .header {
+    font-size: 5rem;
+  }
+  .subheader {
+    font-size: 5rem;
+    padding-top: 0;
+  }
+  section {
+    height: 24rem;
+  }
+}
+@media screen and (max-width: 760px) {
   section {
     height: 50%;
   }
+  .header {
+    padding: 0;
+    font-size: 4rem;
+    margin: auto;
+    margin-top: 3rem;
+    text-shadow: rgb(47, 45, 45) 5px 8px 2px;
+  }
+  .subheader {
+    font-size: 4rem;
+    padding: 0;
+    -webkit-text-stroke: 3px rgb(228, 116, 52);
+  }
 }
-@media screen and (min-width: 1460px) {
-  .games-card-front {
-    height: 100%;
+@media screen and (max-width: 414px) {
+  section {
+    height: 5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header {
+    font-size: 3rem;
+  }
+  .subheader {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  section {
+    height: 25rem;
   }
 }
