@@ -4,15 +4,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/style.scss">
-    <title>Document</title>
+    <link rel="stylesheet" href="scss/loader1.scss">
+    <title>Search</title>
 </head>
 <body>
+
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+<div class="main">
    <h1 class="search-header"> Search For A Game To Find Out If It's On Sale </h1> 
    <form id="search-form" class="search-form">
        <textarea name="search-area" id="search-area" placeholder="search for a game to see if its on sale"></textarea>
        <input type="submit" class="submit-button" />
    </form>
    <div class="games-grid"></div>
+</div>
    <script src="js/search.js"></script>
+   <script src="js/anim.js"></script>
 </body>
 </html>
