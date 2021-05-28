@@ -7,12 +7,19 @@ const listen = function () {
     DOMSelectors.grid.innerHTML = "";
     const searchParams = DOMSelectors.searchArea.value;
     console.log(searchParams);
+    if (DOMSelectors.searchArea.value === "") {
+      alert("Please Input Something To Get Your Desired Results");
+      return;
+    }
     const searchQuery = async function () {
       try {
         const response = await fetch(
           `https://www.cheapshark.com/api/1.0/deals?storeID=1&title=${searchParams}`
         );
         const data = await response.json();
+        if (data.length === 0) {
+          alert("Whoops, looks like we couldn't find anything!");
+        }
         data.forEach((games) => {
           let storesArr = [];
           const addStore = function () {
@@ -63,6 +70,7 @@ const listen = function () {
           </div> `
           );
         });
+        console.log(data.length);
       } catch (error) {
         console.log(error);
         alert("Oops, something bad happened");
