@@ -21,16 +21,16 @@ const listen = function () {
           alert("Whoops, looks like we couldn't find anything!");
         }
         data.forEach((games) => {
-          let storesArr = [];
-          const addStore = function () {
-            stores.forEach((element) => {
-              if (games.storeID.includes(element.id)) {
-                storesArr.push(element.name);
-                return storesArr;
-              }
-            });
-          };
-          addStore();
+          // let storesArr = [];
+          // const addStore = function () {
+          //   stores.forEach((element) => {
+          //     if (games.storeID.includes(element.id)) {
+          //       storesArr.push(element.name);
+          //       return storesArr;
+          //     }
+          //   });
+          // };
+          // addStore();
 
           DOMSelectors.grid.insertAdjacentHTML(
             "beforeend",
