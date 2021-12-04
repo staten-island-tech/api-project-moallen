@@ -8,19 +8,7 @@ function init() {
 
     main.style.display = "block";
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 2000);
-}
-
-init();
-
-function init() {
-  setTimeout(() => {
-    loader.style.opacity = 0;
-    loader.style.display = "none";
-
-    main.style.display = "block";
-    setTimeout(() => (main.style.opacity = 1), 50);
-  }, 2000);
+  }, 1000);
 }
 
 init();

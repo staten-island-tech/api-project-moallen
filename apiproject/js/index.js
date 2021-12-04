@@ -1,12 +1,12 @@
 import { DOMSelectors } from "./DOM";
 import { stores } from "./stores";
 let pageNumber = 0;
-const query = async function (pageNumber) {
+const queryRating = async function (pageNumber) {
   const page = pageNumber;
   DOMSelectors.grid.innerHTML = "";
   try {
     const response = await fetch(
-      `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=Metacritic&pageSize=30&pageNumber=${page}`
+      `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=70&sortBy=Metacritic&pageSize=30&pageNumber=${page}`
     );
 
     const data = await response.json();
@@ -63,19 +63,22 @@ const query = async function (pageNumber) {
     alert("Oops, something bad happened");
   }
 };
-query();
+const ratingsFunction = function () {
+  DOMSelectors.sortRatings.addEventListener("click", queryRating);
+};
 
-const nextPage = function () {
-  DOMSelectors.next.addEventListener("click", function next() {
+const nextPageRating = function () {
+  DOMSelectors.nextRating.addEventListener("click", function next() {
     pageNumber++;
-    query(pageNumber);
+    queryRating(pageNumber);
   });
 };
 const previousPage = function () {
-  DOMSelectors.previous.addEventListener("click", function previousbtn() {
+  DOMSelectors.previousRating.addEventListener("click", function previousbtn() {
     pageNumber--;
-    query(pageNumber);
+    queryRating(pageNumber);
   });
 };
-nextPage();
+ratingsFunction();
+nextPageRating();
 previousPage();

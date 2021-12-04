@@ -15,7 +15,7 @@ body {
 }
 body {
   background-color: #5b6467;
-  background-image: linear-gradient(270deg, #217027 10%, #319bb6 75%);
+  background-image: linear-gradient(270deg, #7bd383 10%, #319bb6 75%);
 }
 
 .main {
@@ -31,23 +31,25 @@ section {
 
 .header {
   // font-family: ;
-  text-shadow: rgb(47, 45, 45) 8px 8px 3px;
-  font-size: 15rem;
+  text-shadow: rgb(47, 45, 45) 4px 5px 4px;
+  font-size: 6rem;
   margin-top: 1rem;
   margin-bottom: 0;
-  padding: 3rem;
-  padding-top: 0;
+  text-decoration: underline overline;
   text-align: center;
-  -webkit-text-stroke: 5px darkblue;
+  -webkit-text-stroke: 4px darkblue;
 }
 
 .subheader {
   margin: 1rem auto 2rem auto;
+  text-decoration: underline overline;
+
   text-align: center;
-  font-size: 8rem;
-  padding: 4rem;
+  font-size: 5rem;
+  text-shadow: rgb(47, 45, 45) 4px 5px 4px;
+
   //padding-top: 0;
-  -webkit-text-stroke: 5px rgb(228, 116, 52);
+  -webkit-text-stroke: 4px darkblue;
 }
 
 @media screen and (max-width: 1440px) {

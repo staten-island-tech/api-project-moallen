@@ -9,11 +9,13 @@ body {
   font-weight: 500;
 }
 .search-header {
-  font-size: 7rem;
+  font-size: 4rem;
   margin: 2rem auto 3rem auto;
   text-align: center;
   animation: load 1000ms ease-out;
-  -webkit-text-stroke: 5px rgb(248, 0, 0);
+  -webkit-text-stroke: 3px darkblue;
+  text-shadow: rgb(47, 45, 45) 4px 5px 4px;
+  text-decoration: underline overline;
 }
 .search-header-link,
 .search-header-link:visited,
@@ -23,6 +25,7 @@ body {
 }
 .search-header-link:hover {
   color: black;
+  -webkit-text-stroke: 3px white;
 }
 .search-form {
   display: flex;

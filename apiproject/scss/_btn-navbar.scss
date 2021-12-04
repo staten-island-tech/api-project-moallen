@@ -1,24 +1,22 @@
 .navbar {
-  font-size: 3.5rem;
+  padding-top: 10px;
+  height: 6rem;
+  font-size: 2rem;
   text-decoration: none;
   width: 100%;
   text-align: center;
-  //background-color: rebeccapurple;
-  margin: 0;
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.404);
-}
-.nav-links {
-  height: 6rem;
+  background-color: rgba(0, 0, 0, 0.301);
 }
 .btn {
+  margin: auto;
   margin-left: 2rem;
   color: black;
   transition: all 0.5s;
   background-color: white;
   border-radius: 1rem;
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .btn:hover {
   transform: scale(1.2);
