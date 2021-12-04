@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { stores } from "./stores";
 let pageNumber = 0;
-const query = async function (pageNumber) {
+const querySaving = async function (pageNumber) {
   const page = pageNumber;
   DOMSelectors.grid.innerHTML = "";
   try {
@@ -64,21 +64,29 @@ const query = async function (pageNumber) {
   }
 };
 const savingsFunction = function () {
-  DOMSelectors.sortSavings.addEventListener("click", query);
+  DOMSelectors.sortSavings.addEventListener("click", querySaving);
 };
 
-const nextPage = function () {
-  DOMSelectors.next.addEventListener("click", function next() {
+const nextPageSaving = function () {
+  DOMSelectors.nextSaving.addEventListener("click", function next() {
     pageNumber++;
-    query(pageNumber);
+    querySaving(pageNumber);
+    if (pageNumber >= 0) {
+      DOMSelectors.previousSaving.style.display = "inline-block";
+      DOMSelectors.grid.style.display = "flex";
+    }
   });
 };
-const previousPage = function () {
-  DOMSelectors.previous.addEventListener("click", function previousbtn() {
+const previousPageSaving = function () {
+  DOMSelectors.previousSaving.addEventListener("click", function previousbtn() {
     pageNumber--;
-    query(pageNumber);
+    querySaving(pageNumber);
+    if (pageNumber < 0) {
+      DOMSelectors.previousSaving.style.display = "none";
+      DOMSelectors.grid.style.display = "none";
+    }
   });
 };
 savingsFunction();
-nextPage();
-previousPage();
+nextPageSaving();
+previousPageSaving();

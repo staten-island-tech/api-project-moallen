@@ -35,7 +35,7 @@ const queryRating = async function (pageNumber) {
       <div class="games-card-back">
         <h3 class="games-card-header">${games.title}</h3>
         <div class="price-box">
-          <p class="price">Get it now for:$ ${games.salePrice}</p>
+          <p class="price salePrice">Get it now for:$ ${games.salePrice}</p>
           <p class="price">Original Price:$ ${games.normalPrice}</p>
          
         </div>
@@ -63,6 +63,7 @@ const queryRating = async function (pageNumber) {
     alert("Oops, something bad happened");
   }
 };
+queryRating();
 const ratingsFunction = function () {
   DOMSelectors.sortRatings.addEventListener("click", queryRating);
 };
@@ -71,12 +72,21 @@ const nextPageRating = function () {
   DOMSelectors.nextRating.addEventListener("click", function next() {
     pageNumber++;
     queryRating(pageNumber);
+    if (pageNumber >= 0) {
+      DOMSelectors.previousRating.style.display = "inline-block";
+      DOMSelectors.grid.style.display = "flex";
+    }
   });
 };
 const previousPage = function () {
   DOMSelectors.previousRating.addEventListener("click", function previousbtn() {
     pageNumber--;
     queryRating(pageNumber);
+    if (pageNumber < 0) {
+      alert("You can't go back when there's nothing there");
+      DOMSelectors.previousRating.style.display = "none";
+      DOMSelectors.grid.style.display = "none";
+    }
   });
 };
 ratingsFunction();
