@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { stores } from "./stores";
 let pageNumber = 0;
-const queryPrice = async function (pageNumber) {
+const query = async function (pageNumber) {
   const page = pageNumber;
   DOMSelectors.grid.innerHTML = "";
   try {
@@ -64,29 +64,20 @@ const queryPrice = async function (pageNumber) {
   }
 };
 const priceFunction = function () {
-  DOMSelectors.sortPrice.addEventListener("click", queryPrice);
+  DOMSelectors.sortPrice.addEventListener("click", query);
 };
-
-const nextPagePrice = function () {
-  DOMSelectors.nextPrice.addEventListener("click", function next() {
+const nextPage = function () {
+  DOMSelectors.next.addEventListener("click", function next() {
     pageNumber++;
-    queryPrice(pageNumber);
-    if (pageNumber >= 0) {
-      DOMSelectors.previousPrice.style.display = "inline-block";
-      DOMSelectors.grid.style.display = "flex";
-    }
+    query(pageNumber);
   });
 };
-const previousPagePrice = function () {
-  DOMSelectors.previousPrice.addEventListener("click", function previousbtn() {
+const previousPage = function () {
+  DOMSelectors.previous.addEventListener("click", function previousbtn() {
     pageNumber--;
-    queryPrice(pageNumber);
-    if (pageNumber < 0) {
-      DOMSelectors.previousPrice.style.display = "none";
-      DOMSelectors.grid.style.display = "none";
-    }
+    query(pageNumber);
   });
 };
 priceFunction();
-nextPagePrice();
-previousPagePrice();
+nextPage();
+previousPage();

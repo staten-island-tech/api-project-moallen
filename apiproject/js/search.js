@@ -45,9 +45,7 @@ const listen = function () {
             <div class="games-card-back">
               <h3 class="games-card-header">${games.title}</h3>
               <div class="price-box">
-                <p class="price salePrice">Get it now for:$ ${
-                  games.salePrice
-                }</p>
+                <p class="price">Get it now for:$ ${games.salePrice}</p>
                 <p class="price">Original Price:$ ${games.normalPrice}</p>
                
               </div>
