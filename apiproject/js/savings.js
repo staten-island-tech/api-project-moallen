@@ -71,12 +71,21 @@ const nextPage = function () {
   DOMSelectors.next.addEventListener("click", function next() {
     pageNumber++;
     query(pageNumber);
+    if (pageNumber >= 0) {
+      DOMSelectors.grid.style.display = "flex";
+      DOMSelectors.previousRating.style.display = "inline-block";
+    }
   });
 };
 const previousPage = function () {
   DOMSelectors.previous.addEventListener("click", function previousbtn() {
     pageNumber--;
     query(pageNumber);
+    if (pageNumber < 0) {
+      alert("You can't do that, there is no previous page");
+      DOMSelectors.grid.style.display = "none";
+      DOMSelectors.previousRating.style.display = "none";
+    }
   });
 };
 savingsFunction();

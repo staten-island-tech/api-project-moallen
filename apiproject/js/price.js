@@ -1,7 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { stores } from "./stores";
 let pageNumber = 0;
-const query = async function (pageNumber) {
+const queryPrice = async function (pageNumber) {
   const page = pageNumber;
   DOMSelectors.grid.innerHTML = "";
   try {
@@ -64,12 +64,16 @@ const query = async function (pageNumber) {
   }
 };
 const priceFunction = function () {
-  DOMSelectors.sortPrice.addEventListener("click", query);
+  DOMSelectors.sortPrice.addEventListener("click", queryPrice);
 };
 const nextPage = function () {
   DOMSelectors.next.addEventListener("click", function next() {
     pageNumber++;
     query(pageNumber);
+    if (pageNumber >= 0) {
+      DOMSelectors.grid.style.display = "flex";
+      DOMSelectors.previousRating.style.display = "inline-block";
+    }
   });
 };
 const previousPage = function () {

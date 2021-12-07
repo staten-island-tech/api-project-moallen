@@ -71,14 +71,24 @@ const nextPageRating = function () {
   DOMSelectors.nextRating.addEventListener("click", function next() {
     pageNumber++;
     queryRating(pageNumber);
+    if (pageNumber >= 0) {
+      DOMSelectors.grid.style.display = "flex";
+      DOMSelectors.previousRating.style.display = "inline-block";
+    }
   });
 };
-const previousPage = function () {
+const previousPageRating = function () {
   DOMSelectors.previousRating.addEventListener("click", function previousbtn() {
     pageNumber--;
     queryRating(pageNumber);
+    if (pageNumber < 0) {
+      alert("You can't do that, there is no previous page");
+      DOMSelectors.grid.style.display = "none";
+      DOMSelectors.previousRating.style.display = "none";
+    }
   });
 };
 ratingsFunction();
 nextPageRating();
-previousPage();
+previousPageRating();
+queryRating();
